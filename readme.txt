@@ -1,3 +1,7 @@
+TrabajoIntegradorFinal.PA_grupo19
+Descripción
+Esta es una aplicación simple de gestión de tareas construida con Flask. Permite agregar tareas con un título y descripción, y ver una lista de todas las tareas.
+
 Pasos:
 Instalar Flask: pip install flask en cmd
 Instalar Flask SQLAlchemy (para la base de datos sql): pip install flask sqlalchemy en cmd
