@@ -1,25 +1,18 @@
-from models import Task, db  # Importación absoluta
-from flask import Blueprint, request, jsonify, render_template
+from flask import Blueprint, render_template
 
 bp = Blueprint('main', __name__)
 
+# Definir las rutas dentro del blueprint
 @bp.route('/')
 def index():
     return render_template('index.html')
 
-@bp.route('/add_task')
-def add_task():
-    return render_template('add_task.html')
+@bp.route('/about')
+def about():
+    return "Esta es la página de acerca de nosotros."
 
-@bp.route('/tasks', methods=['POST'])
-def add_task_api():
-    data = request.get_json()
-    new_task = Task(description=data['description'])
-    db.session.add(new_task)
-    db.session.commit()
-    return jsonify({"message": "Task added!"}), 201
+@bp.route('/user/<username>')
+def user_profile(username):
+    return f"Perfil de usuario: {username}"
 
-@bp.route('/tasks', methods=['GET'])
-def get_tasks():
-    tasks = Task.query.all()
-    return jsonify([{"id": task.id, "description": task.description, "completed": task.completed} for task in tasks])
+
