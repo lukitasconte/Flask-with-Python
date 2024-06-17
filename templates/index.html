@@ -1,9 +1,28 @@
-<!-- templates/index.html -->
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tareas</h1>
+        <h2>Grupo 19 PROGRAMACION AVANZADA</h2>
+        <p>TAREAS:</p>
+        
+        <button id="add-task-button" class="add-task-button">+</button>
 
-{% block title %}Inicio - {{ super() }}{% endblock %}
+        <div id="task-form" class="task-form hidden">
+            <input type="text" id="task-title" placeholder="Título de la tarea" required>
+            <textarea id="task-desc" placeholder="Descripción opcional"></textarea>
+            <button id="save-task-button" class="save-task-button">Guardar Tarea</button>
+        </div>
 
-{% block content %}
-<h2>Página de Inicio</h2>
-<!-- Contenido específico de la página de inicio -->
-{% endblock %}
+        <ul id="task-list" class="task-list"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
