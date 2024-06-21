@@ -1,0 +1,87 @@
+/* static/styles.css */
+
+body {
+    background-color: #4b0082; /* Violeta oscuro */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #a780d4; /* Violeta suave */
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1, .container h2, .tasks-title {
+    color: #fff; /* Texto blanco */
+}
+
+.add-task-button {
+    background-color: #4169e1; /* Azul real */
+    color: #fff; /* Texto blanco */
+    border: none;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px; /* Esquinas redondeadas */
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-task-button:hover {
+    background-color: #6495ed; /* Azul acero claro */
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task-item {
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item .task-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6a5acd; /* Violeta medio */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-item .task-desc {
+    color: #666; /* Texto gris */
+    font-size: 14px;
+}
+
+.task-item .task-buttons {
+    margin-top: 5px;
+}
+
+.task-item button {
+    background-color: #4169e1; /* Azul real */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.task-item button:hover {
+    background-color: #6495ed; /* Azul acero claro */
+}
