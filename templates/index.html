@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tareas</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto+Slab&family=Bebas+Neue&family=Tiny5&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,25 +13,23 @@
         <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 20px;">Grupo 19 PROGRAMACION AVANZADA</h2>
         <p class="tasks-title" style="font-family: 'Roboto Slab', serif; font-size: 20px;">TAREAS:</p>
         
-        <!-- El contenido dinámico de Flask no es compatible con GitHub Pages -->
-        <!-- Solo mostramos un mensaje estático o un ejemplo de cómo sería -->
-        
-        <button id="add-task-button" class="add-task-button">+</button>
+        {% if current_user.is_authenticated %}
+            <button id="add-task-button" class="add-task-button">+</button>
 
-        <div id="task-form" class="task-form hidden">
-            <input type="text" id="task-title" placeholder="Título de la tarea" required style="font-family: 'Josefin Sans', sans-serif; font-size: 18px;">
-            <textarea id="task-desc" placeholder="Descripción opcional" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px;"></textarea>
-            <button id="save-task-button" class="save-task-button">Guardar Tarea</button>
-        </div>
+            <div id="task-form" class="task-form hidden">
+                <input type="text" id="task-title" placeholder="Título de la tarea" required style="font-family: 'Josefin Sans', sans-serif; font-size: 18px;">
+                <textarea id="task-desc" placeholder="Descripción opcional" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px;"></textarea>
+                <button id="save-task-button" class="save-task-button">Guardar Tarea</button>
+            </div>
 
-        <ul id="task-list" class="task-list"></ul>
-
-        <!-- Enlaces de ejemplo para login/logout/register -->
-        <a href="login.html">Login</a> | 
-        <a href="register.html">Register</a> | 
-        <a href="logout.html">Logout</a>
+            <ul id="task-list" class="task-list"></ul>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a> | 
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
     </div>
 
-    <script src="static/scripts.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
