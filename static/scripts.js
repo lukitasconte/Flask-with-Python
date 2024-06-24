@@ -1,14 +1,12 @@
-// scripts.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const addTaskButton = document.getElementById('add-task-button');
     const taskForm = document.getElementById('task-form');
-    const taskList = document.getElementById('task-list');
-    const saveTaskButton = document.getElementById('save-task-button');
 
     addTaskButton.addEventListener('click', function() {
-        taskForm.classList.toggle('hidden');
+        taskForm.classList.toggle('hidden'); // Toggle the visibility of the task form
     });
+
+    const saveTaskButton = document.getElementById('save-task-button');
 
     saveTaskButton.addEventListener('click', function(event) {
         event.preventDefault();
@@ -20,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor, ingrese un título para la tarea.');
             return;
         }
+
+        const taskList = document.getElementById('task-list');
 
         const taskItem = document.createElement('li');
         taskItem.className = 'task-item';
@@ -36,15 +36,5 @@ document.addEventListener('DOMContentLoaded', function() {
         taskForm.classList.add('hidden');
         document.getElementById('task-title').value = '';
         document.getElementById('task-desc').value = '';
-    });
-
-    taskList.addEventListener('click', function(event) {
-        if (event.target.classList.contains('complete-task-button')) {
-            const taskItem = event.target.closest('.task-item');
-            taskItem.classList.toggle('completed');
-        } else if (event.target.classList.contains('delete-task-button')) {
-            const taskItem = event.target.closest('.task-item');
-            taskItem.remove();
-        }
     });
 });
