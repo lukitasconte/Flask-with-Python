@@ -1,5 +1,8 @@
-/* static/styles.css */
+.hidden {
+    display: none;
+}
 
+/* Resto del código CSS */
 body {
     background-color: #4b0082; /* Violeta oscuro */
     font-family: Arial, sans-serif;
@@ -37,6 +40,35 @@ body {
 }
 
 .add-task-button:hover {
+    background-color: #6495ed; /* Azul acero claro */
+}
+
+.task-form {
+    margin-top: 20px;
+    display: none; /* Inicialmente oculto */
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-form input, .task-form textarea, .task-form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.save-task-button {
+    background-color: #4169e1; /* Azul real */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.save-task-button:hover {
     background-color: #6495ed; /* Azul acero claro */
 }
 
